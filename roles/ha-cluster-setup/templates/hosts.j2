@@ -1,3 +1,5 @@
-{% for host in groups[group_names] %}
-{{ hostvars[host]['ansible_hostname'] }}
+{% for groups in groups[group_names] %}
+   {% for host in hostvars[groups] %}
+        {{ host }}
+   {% endfor %}
 {% endfor %}
