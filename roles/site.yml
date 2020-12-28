@@ -1,0 +1,7 @@
+- name: LINUX High Availability and CLUSTER Setup
+  hosts: linux_servers
+  ignore_errors: true
+  ignore_unreachable: true
+  roles:
+    - ha-cluster-setup
+  become: yes
