@@ -1,9 +1,23 @@
+- name: Setup the authentication
+  shell: "pcs host auth {{ fqdn1 }} {{ fqdn2 }} -u hacluster -p {{ pcs_auth_pwd }}"
+  when: ansible_hostname == hostname1
+
 - name: Create a cluster
-  shell: "pcs cluster setup {{ cluster_name }} --start  {{ hostname1 }} {{ hostname2 }} --force"
+  shell: "pcs cluster setup {{ cluster_name }} --start  {{ fqdn1 }} {{ fqdn2 }} --force"
   when: ansible_hostname == hostname1
 
 - name: Enable the cluster on boot
   shell: pcs cluster enable --all
+  when: ansible_hostname == hostname1
 
 - name: Start the cluster
   shell: pcs cluster start --all
+  when: ansible_hostname == hostname1
+
+- name: Configuring Cluster Options | stonith-enabled
+  shell: pcs property set stonith-enabled=false
+  when: ansible_hostname == hostname1
+
+- name: Configuring Cluster Options | no-quorum-policy
+  shell: pcs property set no-quorum-policy=ignore
+  when: ansible_hostname == hostname1
