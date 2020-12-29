@@ -6,5 +6,6 @@
     - rules/install_packages.yml
     - rules/parking_page.yml
     - rules/start_services.yml
+    - rules/append_hacluster_password.yml
   loop_control:
     loop_var: ha_cluster_rule_item
