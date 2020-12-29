@@ -6,5 +6,3 @@
   loop:
     - nginx
     - pcsd
-    - pacemaker
-    - corosync
