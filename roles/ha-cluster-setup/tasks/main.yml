@@ -1,4 +1,7 @@
 ---
+- name: Import vault vars
+  include_vars: vault.yml
+  
 - name: High Availability and Cluster Setup Sequence
   include_tasks: "{{ ha_cluster_rule_item }}"
   loop:
