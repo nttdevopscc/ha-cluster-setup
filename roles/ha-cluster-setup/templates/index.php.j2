@@ -9,15 +9,6 @@
     </h3>
     <p>
         <strong>List of Databases:</strong> <br/>
-    <?php
-    //Spoiler: don't do this at home!
-    $dbobj = mysql_connect('{{ ansible_lo.ipv4.address }}', '{{ dbuser }}', '{{ dbpassword }}');
-    if (!$dbobj) { die('Could not connect: ' . mysql_error()); }
-    $result = mysql_query("SHOW DATABASES");
-    while ($res = mysql_fetch_assoc($result)){
-        echo $res['Database'] . "<br/>";
-    }
-    ?>
     </p>
     <br/>
     <p><img src="cloud.png" alt="NTT Logo"></p>
