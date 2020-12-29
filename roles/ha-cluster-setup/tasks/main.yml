@@ -3,7 +3,7 @@
   include_tasks: "{{ ha_cluster_rule_item }}"
   loop:
     - rules/update_hosts_file.yml
-    # - rules/install_sql.yml
+    - rules/install_packages.yml
     # - rules/firewall_configuration.yml
   loop_control:
     loop_var: ha_cluster_rule_item

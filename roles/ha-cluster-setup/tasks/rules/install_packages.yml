@@ -1,0 +1,7 @@
+- name: Install a list of packages
+  apt:
+    pkg:
+    - nginx
+    - corosync
+    - pacemaker
+    - pcs
