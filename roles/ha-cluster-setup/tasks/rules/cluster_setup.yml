@@ -1,6 +1,6 @@
 - name: Create a cluster
   shell: "pcs cluster setup {{ cluster_name }} --start  {{ fqdn1 }} {{ fqdn2 }} --force"
-  when: ansible_host == hostname1
+  when: ansible_hostname == hostname1
 
 - name: Enable the cluster on boot
   shell: pcs cluster enable --all
