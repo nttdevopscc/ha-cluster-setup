@@ -5,3 +5,4 @@ fqdn1: node01.kbtlab.ntt
 fqdn2: node02.kbtlab.ntt
 hostname1: node01
 hostname2: node02
+cluster_name: ihispoccluster
