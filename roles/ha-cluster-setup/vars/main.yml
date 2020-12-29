@@ -1,0 +1,7 @@
+ip1: 172.31.2.63
+ip2: 172.31.2.64
+vip: 172.31.2.65
+fqdn1: node01.kbtlab.ntt
+fqdn2: node01.kbtlab.ntt
+hostname1: node01
+hostname2: node02

@@ -1,5 +1,2 @@
-{% for groups in groups[group_names] %}
-   {% for host in groups %}
-        {{ hostvars[host][ansible_hostname] }}
-   {% endfor %}
-{% endfor %}
+{{ ip1 }}   {{ fqdn1 }} {{ hostname1 }}
+{{ ip2 }}   {{ fqdn2 }} {{ hostname2 }}
