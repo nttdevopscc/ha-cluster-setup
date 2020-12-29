@@ -1,0 +1,10 @@
+- name: Make sure a service is running and enabled on restart
+  systemd:
+    state: started
+    name: "{{ item }}"
+    enabled: yes
+  loop:
+    - nginx
+    - pcsd
+    - pacemaker
+    - corosync

@@ -1,0 +1,9 @@
+- name: Copy the NTT logo to the web servers
+  copy: 
+    src=cloud.png 
+    dest=/var/www/html/cloud.png
+
+- name: Upload the web files to the web servers
+  template:
+    src=index.php.j2
+    dest=/var/www/html/index.php
