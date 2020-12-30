@@ -1,8 +1,8 @@
 ip1: 172.31.2.63
 ip2: 172.31.2.64
 vip: 172.31.2.65
-fqdn1: node1.nttapdemo.com
-fqdn2: node2.nttapdemo.com
-hostname1: node1
-hostname2: node2
+fqdn1: node01.nttapdemo.com
+fqdn2: node02.nttapdemo.com
+hostname1: node01
+hostname2: node02
 cluster_name: ihispoccluster
