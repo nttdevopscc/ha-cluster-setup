@@ -6,4 +6,3 @@ fqdn2: node02.nttapdemo.com
 hostname1: node01
 hostname2: node02
 cluster_name: ihispoccluster
-newpassword: P@ssw0rd@2021

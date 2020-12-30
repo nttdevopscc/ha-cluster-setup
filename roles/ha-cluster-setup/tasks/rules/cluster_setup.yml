@@ -6,26 +6,26 @@
   shell: "pcs cluster setup {{ cluster_name }} --start  {{ fqdn1 }} {{ fqdn2 }} --force"
   when: ansible_hostname == hostname1
 
-- name: Enable the cluster on boot
-  shell: pcs cluster enable --all
-  when: ansible_hostname == hostname1
+# - name: Enable the cluster on boot
+#   shell: pcs cluster enable --all
+#   when: ansible_hostname == hostname1
 
-- name: Start the cluster
-  shell: pcs cluster start --all
-  when: ansible_hostname == hostname1
+# - name: Start the cluster
+#   shell: pcs cluster start --all
+#   when: ansible_hostname == hostname1
 
-- name: Configuring Cluster Options | stonith-enabled
-  shell: pcs property set stonith-enabled=false
-  when: ansible_hostname == hostname1
+# - name: Configuring Cluster Options | stonith-enabled
+#   shell: pcs property set stonith-enabled=false
+#   when: ansible_hostname == hostname1
 
-- name: Configuring Cluster Options | no-quorum-policy
-  shell: pcs property set no-quorum-policy=ignore
-  when: ansible_hostname == hostname1
+# - name: Configuring Cluster Options | no-quorum-policy
+#   shell: pcs property set no-quorum-policy=ignore
+#   when: ansible_hostname == hostname1
 
-- name: Adding a Resource/Cluster Service in node01 | VIP
-  shell: "pcs resource create floating_ip ocf:heartbeat:IPaddr2 ip={{ vip }} cidr_netmask=24 op monitor interval=60s"
-  when: ansible_hostname == hostname1
+# - name: Adding a Resource/Cluster Service in node01 | VIP
+#   shell: "pcs resource create floating_ip ocf:heartbeat:IPaddr2 ip={{ vip }} cidr_netmask=24 op monitor interval=60s"
+#   when: ansible_hostname == hostname1
 
-- name: Adding a Resource/Cluster Service in node01 | resource create
-  shell: pcs resource create http_server ocf:heartbeat:nginx configfile="/etc/nginx/nginx.conf" op monitor timeout="20s" interval="60s"
-  when: ansible_hostname == hostname1
+# - name: Adding a Resource/Cluster Service in node01 | resource create
+#   shell: pcs resource create http_server ocf:heartbeat:nginx configfile="/etc/nginx/nginx.conf" op monitor timeout="20s" interval="60s"
+#   when: ansible_hostname == hostname1
