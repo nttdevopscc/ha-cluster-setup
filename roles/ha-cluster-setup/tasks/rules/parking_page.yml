@@ -5,5 +5,5 @@
 
 - name: Upload the web files to the web servers
   template:
-    src=index.php.j2
+    src=index.html.j2
     dest=/var/www/html/index.html
