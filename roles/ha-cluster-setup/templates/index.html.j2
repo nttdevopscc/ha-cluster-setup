@@ -9,14 +9,14 @@
     </h3>
     <p>
         <strong>List of Databases:</strong> <br/>
-        <?php
-        $dbobj = mysql_connect('{{ mysql_ip }}', '{{ dbuser }}', '{{ dbpass }}');
-        if (!$dbobj) { die('Could not connect: ' . mysql_error()); }
-        $result = mysql_query("SHOW DATABASES");
-        while ($res = mysql_fetch_assoc($result)){
+    <?php
+    $dbobj = mysql_connect('{{ mysql_ip }}', '{{ dbuser }}', '{{ dbpass }}');
+    if (!$dbobj) { die('Could not connect: ' . mysql_error()); }
+    $result = mysql_query("SHOW DATABASES");
+    while ($res = mysql_fetch_assoc($result)){
         echo $res['Database'] . "<br/>";
-        }
-        ?>
+    }
+    ?>
     </p>
 
     <br/>
