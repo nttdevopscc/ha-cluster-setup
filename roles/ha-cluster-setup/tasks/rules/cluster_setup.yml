@@ -31,5 +31,5 @@
 #   when: ansible_hostname == hostname1
 
 - name: Adding a Resource/Cluster Service in node1 | resource create
-  shell: pcs resource create http_server ocf:heartbeat:apache2 configfile="/etc/apache2/apache2.conf" op monitor timeout="20s" interval="60s"
+  shell: pcs resource create http_server ocf:heartbeat:apache configfile="/etc/apache2/apache2.conf" op monitor timeout="20s" interval="60s"
   when: ansible_hostname == hostname1
