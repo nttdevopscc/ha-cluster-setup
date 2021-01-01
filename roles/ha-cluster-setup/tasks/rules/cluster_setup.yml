@@ -26,6 +26,10 @@
   shell: "pcs resource create floating_ip ocf:heartbeat:IPaddr2 ip={{ vip }} cidr_netmask=24 op monitor interval=60s"
   when: ansible_hostname == hostname1
 
+# - name: Adding a Resource/Cluster Service in node1 | resource create
+#   shell: pcs resource create http_server ocf:heartbeat:nginx configfile="/etc/nginx/nginx.conf" op monitor timeout="20s" interval="60s"
+#   when: ansible_hostname == hostname1
+
 - name: Adding a Resource/Cluster Service in node1 | resource create
-  shell: pcs resource create http_server ocf:heartbeat:nginx configfile="/etc/nginx/nginx.conf" op monitor timeout="20s" interval="60s"
+  shell: pcs resource create http_server ocf:heartbeat:apache2 configfile="/etc/apache2/apache2.conf" op monitor timeout="20s" interval="60s"
   when: ansible_hostname == hostname1

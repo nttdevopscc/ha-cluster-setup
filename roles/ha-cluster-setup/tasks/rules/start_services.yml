@@ -4,5 +4,5 @@
     name: "{{ item }}"
     enabled: yes
   loop:
-    - nginx
+    - apache2
     - pcsd

@@ -1,7 +1,7 @@
 - name: Install a list of packages
   apt:
     pkg:
-    - nginx
+    - apache2
     - corosync
     - pacemaker
     - pcs
