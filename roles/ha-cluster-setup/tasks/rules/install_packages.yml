@@ -7,3 +7,4 @@
     - pcs
     - php
     - php-mysql
+    - php-fpm

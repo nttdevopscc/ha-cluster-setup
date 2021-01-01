@@ -1,25 +1,27 @@
+<?php
+$dbServerName = "{{ ip1 }}";
+$dbUsername = "{{ dbuser }}";
+$dbPassword = "{{ dbpass }}";
+$dbName = "mysql";
+
+// create connection
+$conn = new mysqli($dbServerName, $dbUsername, $dbPassword, $dbName);
+
+// check connection
+if ($conn->connect_error) {
+    die("MYSQL Status: Connection failed: " . $conn->connect_error);
+}
+echo "MYSQL Status: Connected successfully";
+?>
 <html>
 <head>
        <title>IHIS Automation POC</title>
 </head>
 <body>
-    <h3>
+    <h3><center>
         Thank you for reading this post. My IP Address is {{ ansible_ens160.ipv4.address }}.
         This is {{ ansible_lsb.id }} OS with {{ ansible_lsb.description }} architecture
-    </h3>
-    <p>
-        <strong>List of Databases:</strong> <br/>
-    <?php
-    $dbobj = mysql_connect('{{ mysql_ip }}', '{{ dbuser }}', '{{ dbpass }}');
-    if (!$dbobj) { die('Could not connect: ' . mysql_error()); }
-    $result = mysql_query("SHOW DATABASES");
-    while ($res = mysql_fetch_assoc($result)){
-        echo $res['Database'] . "<br/>";
-    }
-    ?>
-    </p>
-
-    <br/>
+    </center></h3>
     <center><p><img src="cloud.png" alt="NTT Logo"></p></center>
 </body>
 </html>
