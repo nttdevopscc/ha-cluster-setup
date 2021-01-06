@@ -5,10 +5,3 @@
   roles:
     - ha-cluster-setup
   become: yes
-
-
-  vm provisiong
-  pre check
-  harden
-  post check
-  mysql
