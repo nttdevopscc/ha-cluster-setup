@@ -23,7 +23,7 @@
   when: ansible_hostname == hostname1
 
 - name: Adding a Resource/Cluster Service in node1 | VIP
-  shell: "pcs resource create floating_ip ocf:heartbeat:IPaddr2 ip={{ vip }} cidr_netmask=24 op monitor interval=60s"
+  shell: "pcs resource create floating_ip ocf:heartbeat:IPaddr1 ip={{ vip }} cidr_netmask=24 op monitor interval=60s"
   when: ansible_hostname == hostname1
 
 # - name: Adding a Resource/Cluster Service in node1 | resource create
