@@ -1,5 +1,5 @@
 - name: LINUX High Availability and CLUSTER Setup
-  hosts: linux_servers
+  hosts: device_roles_web-tier
   ignore_errors: true
   ignore_unreachable: true
   roles:
