@@ -4,6 +4,10 @@
     - name: Display all variables/facts known for a host
       debug:
         msg: "{{ ansible_all_ipv4_addresses[0] }} {{ ansible_nodename }}"
+    - name: Set fact for DB IP
+      set_fact:
+         db_ip: "{{ ansible_all_ipv4_addresses[0] }}"
+      when: ansible_nodename == 'mysql-100'
 
 # - name: LINUX High Availability and CLUSTER Setup
 #   hosts: device_roles_web-tier
