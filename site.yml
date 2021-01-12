@@ -1,10 +1,9 @@
 - name: Get ansible facts
   hosts: device_roles_db-tier
 
-# - name: Display all variables/facts known for a host
-#   debug:
-#     var: "{{ hostvars[ansible_host] }}"
-#     verbosity: 4
+- name: Display all variables/facts known for a host
+  debug:
+    msg: "{{ ansible_all_ipv4_addresses[0] }}"
 
 # - name: LINUX High Availability and CLUSTER Setup
 #   hosts: device_roles_web-tier
